@@ -63,7 +63,7 @@
 
     });
 
-    describe('submit', function() {
+    describe('validate', function() {
 
       beforeEach(function() {
         object = $('form').iptValidator(config);
@@ -71,6 +71,19 @@
 
       it('expected to return false', function() {
         return expect(object.data(pluginName).validate()).to.not.be.ok;
+      });
+    });
+
+    describe('submit', function() {
+
+      beforeEach(function() {
+        object = $('form').iptValidator(config);
+      });
+
+      it('expected to return false', function() {
+        var event = jQuery.Event('submit');
+        event.data = object.data(pluginName);
+        return expect(object.data(pluginName)._handleFormSubmit(event)).to.not.be.ok;
       });
     });
 
