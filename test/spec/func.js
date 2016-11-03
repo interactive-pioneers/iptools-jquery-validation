@@ -63,6 +63,17 @@
 
     });
 
+    describe('submit', function() {
+
+      beforeEach(function() {
+        object = $('form').iptValidator(config);
+      });
+
+      it('expected to return false', function() {
+        return expect(object.data(pluginName).validate()).to.not.be.ok;
+      });
+    });
+
     describe('_isMatching', function() {
 
       beforeEach(function() {
