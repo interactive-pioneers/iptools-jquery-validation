@@ -50,7 +50,8 @@
   "scripts": {
     "test": "npm run grunt travis --verbose",
     "install": "npm run bower install",
-    "bower": "bower"
+    "bower": "bower",
+    "grunt": "grunt"
   },
   "keywords": [
     "javascript",
